@@ -16,6 +16,7 @@ public class PubsubConsumer {
         Connection conn = RabbitMQUtil.getConn();
          Channel channel = conn.createChannel();
         System.out.println("PubsubConsumer 等待接收消息...... ");
+        System.out.println("终于提交了。。。");
 
         DeliverCallback callback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
